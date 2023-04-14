@@ -49,6 +49,12 @@
                 </tr>
                 </tbody>
             </table>
+            <div class="alert alert-info" role="alert" th:if="${#lists.isEmpty(mercados)}">
+                No hay elementos actualmente.
+            </div>
+            <div class="text-center" th:if="${#lists.size(mercados) > 0}">
+                Hay <span th:text="${#lists.size(mercados)}"></span> resultados.
+            </div>
         </div>
     </div>
 </div>

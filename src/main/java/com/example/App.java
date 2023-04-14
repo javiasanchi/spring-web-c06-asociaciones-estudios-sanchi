@@ -2,6 +2,7 @@ package com.example;
 
 import com.example.entities.Mercado;
 import com.example.repositories.MercadoRepository;
+import com.example.repositories.TiendaRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -14,6 +15,9 @@ public class App {
 	public static void main(String[] args) {
 		ApplicationContext context= SpringApplication.run(App.class, args);
 		MercadoRepository mercadoRepo = context.getBean(MercadoRepository.class);
+		TiendaRepository tiendaRepo = context.getBean(TiendaRepository.class);
+
+
 
 		Mercado mer1 = new Mercado(null, "Veracruz","descripcion",916547548,"veracruz@veracruz.com","Alcorcon","G92009639",10,true);
 		Mercado mer2 = new Mercado(null, "Colón","descripcion",916442187,"colon@colon.com","Alcorcon","F59030725",12,false);
