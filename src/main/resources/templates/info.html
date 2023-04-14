@@ -41,7 +41,11 @@
                     <li class="list-group-item" th:text="| Telefono contacto: ${mercado.telefono}|" ></li>
                     <li class="list-group-item"th:text="| Email: ${mercado.email}|" ></li>
                     <li class="list-group-item"th:text="| Tiene: ${mercado.numPuestos} puestos|" ></li>
-                    <li class="list-group-item"th:text="| Esta abierto ${mercado.abierto}|"  ></li>
+                    <li class="list-group-item">
+                        <h3><span th:if="${mercado.abierto}" class="badge text-bg-success">Abierto</span></h3>
+                        <h3><span th:if="${mercado.abierto} == false" class="badge text-bg-danger">Cerrado</span></h3>
+                    </li>
+
                 </ul>
 
                 <div class="col-4">
