@@ -12,7 +12,7 @@
 	<artifactId>spring-web-c06-asociaciones-estudios-sanchi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-web-c06-asociaciones-estudios-sanchi</name>
-	<description>spring-web-c06-asociaciones-estudios-sanchi</description>
+	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>20</java.version>
 	</properties>
