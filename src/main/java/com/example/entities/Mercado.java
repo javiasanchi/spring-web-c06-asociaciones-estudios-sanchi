@@ -27,4 +27,5 @@ public class Mercado {
     private Boolean abierto;
 
 
+
 }

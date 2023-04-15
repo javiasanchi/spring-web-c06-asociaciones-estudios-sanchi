@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Getter
 @Setter
@@ -32,9 +33,11 @@ public class Tienda {
     private Integer numbPuesto;
 
     @Column(name = "hor_aper")
-    private LocalDate horAper;
+    private LocalTime horAper;
 
     @Column(name = "hor_cierre")
-    private LocalDate horCierre;
+    private LocalTime horCierre;
+    @ManyToOne
+    private  Mercado mercado;
 
 }
