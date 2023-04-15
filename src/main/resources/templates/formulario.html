@@ -62,7 +62,7 @@
                     <input class="form-check-input" type="checkbox" role="switch" id="abierto" th:field="*{abierto}">
                     <label class="form-check-label" for="abierto">Abierto</label>
                 </div>
-                <a class="btn btn-danger" th:href="@{/main}">Cancelar</a>
+                <a class="btn btn-danger" th:href="@{/main/{id}/borrar(id=${mercado.id})}">Borrar</a>
                 <a class="btn btn-primary" th:href="@{/main}">Volver</a>
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </form>
