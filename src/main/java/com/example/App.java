@@ -17,7 +17,10 @@ public class App {
 	public static void main(String[] args) {
 		ApplicationContext context= SpringApplication.run(App.class, args);
 
-
+		LocalTime horAper1 = LocalTime.of(10,0,0);
+		LocalTime horAper2 = LocalTime.of(9,0,0);
+		LocalTime horCierre1= LocalTime.of(20,0);
+		LocalTime horCierre2= LocalTime.of(21,0);
 
 		MercadoRepository mercadoRepo = context.getBean(MercadoRepository.class);
 
@@ -36,13 +39,14 @@ public class App {
 
 		TiendaRepository tiendaRepo = context.getBean(TiendaRepository.class);
 
-		var tien1 = new Tienda(null,"Muñoz",916509348,"munoz@munoz.es",3,10, LocalTime.of(10,0),LocalTime.of(21,0),mer1);
-		var tien2 = new Tienda(null,"Jose Luis",916401122,"joseluis@gmail.com",2,9, LocalTime.of(10,0),LocalTime.of(20,0),mer1);
-		var tien3 = new Tienda(null,"Muñoz",916780905,"munoz@munoz.es",3,7, LocalTime.of(10,0),LocalTime.of(20,0),mer1);
-		var tien4 = new Tienda(null,"Muñoz",916780905,"munoz@munoz.es",3,7, LocalTime.of(10,0),LocalTime.of(20,0),mer1);
-		var tien5 = new Tienda(null,"Muñoz",916509348,"munoz@munoz.es",3,6, LocalTime.of(10,0),LocalTime.of(20,0),mer1);
+		var tien1 = new Tienda(null,"Muñoz",916509348,"munoz@munoz.es",3,10, LocalTime.of(9,0),LocalTime.of(20,0),mer1);
+		var tien2 = new Tienda(null,"Jose Luis",916401122,"joseluis@gmail.com",2,9,LocalTime.of(10,0), LocalTime.of(20,0),mer1);
+		var tien3 = new Tienda(null,"Hnos. Sanz",916940205,"sanz@munoz.es",3,7,LocalTime.of(9,0),LocalTime.of(20,0),mer1);
+		var tien4 = new Tienda(null,"Sara",916780905,"sara@munoz.es",3,7,LocalTime.of(9,0),LocalTime.of(21,0),mer1);
+		var tien5 = new Tienda(null,"Carlos",916503729,"carlos@munoz.es",3,6,LocalTime.of(9,0),LocalTime.of(20,0),mer1);
+		var tien6 = new Tienda(null, "Isabel",918653420,"correo@correo.org",3,5,LocalTime.of(10,0), LocalTime.of(19,0),mer1);
 
-		tiendaRepo.saveAll(List.of(tien1,tien2,tien3,tien4,tien5));
+		tiendaRepo.saveAll(List.of(tien1,tien2,tien3,tien4,tien5,tien6));
 	}
 }
 
