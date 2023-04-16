@@ -27,7 +27,7 @@ public class TiendaController {
         model.addAttribute("mensaje","Listado de tiendas de mercados de ");
         model.addAttribute("tiendas", tiendas);
 
-        return "/tienda/list-tiendas";
+        return "list-tienda";
     }
     @GetMapping("main/tienda/list-tienda/{id}")
     public String findById (Model model, @PathVariable Long id){
@@ -44,12 +44,12 @@ public class TiendaController {
         model.addAttribute("mercado" , mercadoService.findAllByCiudad(ciudad));
         return "main";
         }*/
-        @GetMapping("main/crear")
+        @GetMapping("main/tienda/crear")
     public String crear (Model model){
         model.addAttribute("tienda", new Tienda());
         return "/tienda/form-tienda";
         }
-    @GetMapping("main/{id}/tienda/{id}/editar")
+    @GetMapping("main/{id}/tienda/editar")
     public String editForm(Model model, @PathVariable Long id) {
         Optional<Tienda> tiendaOp = tiendaServ.findById(id);
         if (tiendaOp.isPresent())
@@ -57,7 +57,7 @@ public class TiendaController {
         else
             model.addAttribute("error", "MERCADO NO EXISTE O NO SE ENCUENTRA");
 
-        return "form-tienda";
+        return "/tiendaform-tienda";
     }
 
     @PostMapping("main/tienda") // POST http://localhost:8080/foods
