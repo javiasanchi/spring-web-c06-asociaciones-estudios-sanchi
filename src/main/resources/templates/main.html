@@ -29,6 +29,7 @@
                         <th scope="col">Ciudad</th>
                         <th scope="col">Puestos</th>
                         <th scope="col">Abierto</th>
+                        <th scope="col">Tiendas</th>
                         <th scope="col">Acciones</th>
                     </tr>
                     </thead>
@@ -40,6 +41,7 @@
                         <td th:text="${mercado.email}"></td>
                         <td th:text="${mercado.ciudad}"></td>
                         <td th:text="${mercado.numPuestos}"></td>
+                        <td th:href="@{/main/tienda/list-tienda/{id}}"></td>
                         <td th:text="${mercado.abierto}"></td>
                         <td>
                             <a type="button" class="btn btn-primary" th:href="@{/main/{id}(id=${mercado.id})}">Ver</a>

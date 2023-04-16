@@ -14,11 +14,11 @@
 <div th:replace="~{layaout :: navbar2}"></div>
 <div class="container text-center">
   <div class="row">
-    <h3 class="mb-4">Detalle de mercado</h3>
+    <h3 class="mb-4">Detalle de Tiendas</h3>
     <div class="card-body mb-4">
-      <a type="button" class="btn btn-primary" th:href="@{/main}">Volver</a>
-      <a class="btn btn-success" th:href="@{/main/{id}/editar(id=${mercado.id})}">Editar</a>
-      <a class="btn btn-danger" th:href="@{/main/{id}/borrar(id=${mercado.id})}">Borrar</a>
+      <a type="button" class="btn btn-primary" th:href="@{/tienda/list-tienda}">Volver</a>
+      <a class="btn btn-success" th:href="@{/tienda/{id}/editar(id=${tienda.id})}">Editar</a>
+      <a class="btn btn-danger" th:href="@{/tienda/{id}/borrar(id=${tienda.id})}">Borrar</a>
     </div>
     <div class="col-4">
 

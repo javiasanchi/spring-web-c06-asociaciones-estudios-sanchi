@@ -17,11 +17,6 @@ public class App {
 	public static void main(String[] args) {
 		ApplicationContext context= SpringApplication.run(App.class, args);
 
-		LocalTime horAper1 = LocalTime.of(10,0,0);
-		LocalTime horAper2 = LocalTime.of(9,0,0);
-		LocalTime horCierre1= LocalTime.of(20,0);
-		LocalTime horCierre2= LocalTime.of(21,0);
-
 		MercadoRepository mercadoRepo = context.getBean(MercadoRepository.class);
 
 		Mercado mer1 = new Mercado(null, "Veracruz","descripcion",916547548,"veracruz@veracruz.com","Alcorcon","G92009639",10,true);
