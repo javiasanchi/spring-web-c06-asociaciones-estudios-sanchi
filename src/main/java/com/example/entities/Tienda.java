@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Getter
 @Setter
@@ -20,23 +21,20 @@ public class Tienda {
     private String nombre;
     private String descripcion;
 
-    @Column(name = "telefono")
-    private String telefono;
+    @Column(length = 9)
+    private Integer telefono;
 
     @Column(name = "email", unique = true)
     private String email;
 
-    @Column(name = "num_empl")
-    private String numEmpl;
+    private Integer numEmpl;
 
-    @Column(name = "numb_puesto")
-    private Integer numePuesto;
+    private Integer numbPuesto;
 
-    @Column(name = "hor_aper")
-    private LocalDate horAper;
+    private LocalTime horAper;
 
-    @Column(name = "hor_cierre")
-    private LocalDate horCierre;
+    private LocalTime horCierre;
     @ManyToOne
-    private Mercado mercado;
+    private  Mercado mercado;
+
 }
