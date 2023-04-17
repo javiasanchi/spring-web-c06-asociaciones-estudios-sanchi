@@ -21,10 +21,10 @@ public class TiendaController {
     private final MercadoService mercadoService;
     private TiendaService tiendaServ;
 
-    @GetMapping("main/tienda/list-tienda")
+    @GetMapping("home")
     public String findAll (Model model){
-        List<Mercado> tiendas = mercadoService.findAll();
-        model.addAttribute("mensaje","Listado de tiendas de mercados de ");
+        List<Tienda> tiendas = tiendaServ.findAll();
+        model.addAttribute("mensaje","Listado de tiendas de mercados");
         model.addAttribute("tiendas", tiendas);
 
         return "list-tienda";
