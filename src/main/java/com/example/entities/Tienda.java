@@ -18,6 +18,7 @@ public class Tienda {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
+    private String descripcion;
 
     @Column(name = "telefono")
     private String telefono;
@@ -29,12 +30,13 @@ public class Tienda {
     private String numEmpl;
 
     @Column(name = "numb_puesto")
-    private Integer numbPuesto;
+    private Integer numePuesto;
 
     @Column(name = "hor_aper")
     private LocalDate horAper;
 
     @Column(name = "hor_cierre")
     private LocalDate horCierre;
-
+    @ManyToOne
+    private Mercado mercado;
 }
