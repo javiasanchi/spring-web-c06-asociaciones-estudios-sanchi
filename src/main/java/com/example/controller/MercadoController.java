@@ -21,7 +21,7 @@ public class MercadoController {
     @GetMapping("main")
     public String findAll (Model model){
         List<Mercado> mercados = mercadoService.findAll();
-        model.addAttribute("mensaje","Listado de mercados de Alcorcón");
+        model.addAttribute("mensaje","Listado de mercados" );
         model.addAttribute("mercados", mercados);
 
         return "main";

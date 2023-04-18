@@ -39,13 +39,18 @@
                     <li class="list-group-item" th:text="| Telefono contacto: ${tienda.telefono}|" ></li>
                     <li class="list-group-item" th:text="| Email: ${tienda.email}|" ></li>
                     <li class="list-group-item" th:text="| Ocupa el : ${tienda.numbPuesto} puesto|" ></li>
-                    <li class="list-group-item" th:text="| Situada en el mercado : ${tienda.mercado.nombre} |" ></li>
+                    <li class="list-group-item" th:text="|Siruado en el mercado ${tienda.mercado.nombre} |"></li>
                     <li class="list-group-item">
                         <h3><span th:if="${tienda.horAper} " th:text="| Abre a las ${tienda.horAper}|" class="badge text-bg-success"></span></h3>
                         <h3><span th:if="${tienda.horCierre}" th:text="| Cierra a las ${tienda.horCierre}|" class="badge text-bg-danger"></span></h3>
                     </li>
 
                 </ul>
+                <div>
+
+                    <a type="button" class="btn btn-primary" th:href="@{/tiendas}">Volver</a>
+
+                </div>
 
                 <div class="col-4">
                 </div>

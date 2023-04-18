@@ -40,7 +40,11 @@
                         <td th:text="${mercado.email}"></td>
                         <td th:text="${mercado.ciudad}"></td>
                         <td th:text="${mercado.numPuestos}"></td>
-                        <td th:text="${mercado.abierto}"></td>
+                        <td>
+                        <h3><span th:if="${mercado.abierto}" class="badge text-bg-success">Abierto</span></h3>
+                        <h3><span th:if="${mercado.abierto} == false" class="badge text-bg-danger">Cerrado</span></h3>
+
+                        </td>
                         <td>
                             <a type="button" class="btn btn-primary" th:href="@{/main/{id}(id=${mercado.id})}">Ver</a>
                             <a class="btn btn-success" th:href="@{/main/{id}/editar(id=${mercado.id})}">Editar</a>

@@ -23,7 +23,7 @@ public class TiendaController {
     @GetMapping("tiendas")
     public String findAll (Model model){
         List<Tienda> tiendas = tiendaServ.findAll();
-        model.addAttribute("mensaje","Listado de tiendas de mercados");
+        model.addAttribute("mensaje","Listado de tiendas");
         model.addAttribute("tiendas", tiendas);
 
         return "tiendas";

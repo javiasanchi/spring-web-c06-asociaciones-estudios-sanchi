@@ -28,6 +28,7 @@
             <th scope="col">Email</th>
             <th scope="col">Hora apertura</th>
             <th scope="col">Hora cierre</th>
+            <th scope="col">Mercado</th>
             <th scope="col">Acciones</th>
           </tr>
           </thead>
@@ -39,6 +40,7 @@
             <td th:text="${tienda.email}"></td>
             <td th:text="${tienda.horAper}"></td>
             <td th:text="${tienda.horCierre}"></td>
+            <td th:text="${tienda.mercado.nombre}"></td>
 
             <td>
               <a type="button" class="btn btn-primary" th:href="@{/tiendas/{id}(id=${tienda.id})}">Ver</a>
