@@ -40,8 +40,12 @@ public class App {
 		var tien4 = new Tienda(null,"Sara","descripcion",916780905,"sara@munoz.es",3,7,LocalTime.of(9,0),LocalTime.of(21,0),mer1);
 		var tien5 = new Tienda(null,"Carlos","descripcion",916503729,"carlos@munoz.es",3,6,LocalTime.of(9,0),LocalTime.of(20,0),mer1);
 		var tien6 = new Tienda(null, "Isabel","descripcion",918653420,"correo@correo.org",3,5,LocalTime.of(10,0), LocalTime.of(19,0),mer1);
+		var tien7 = new Tienda(null, "Angel Hnos.","descripcion",672098115,"angelhnos@correo.org",3,4,LocalTime.of(10,0), LocalTime.of(19,0),mer1);
+		var tien8 = new Tienda(null, "Eva Hija","descripcion",916401118,"evahija@correo.org",3,3,LocalTime.of(10,0), LocalTime.of(19,0),mer1);
+		var tien9 = new Tienda(null, "La Cabaña","descripcion",918653420,"lacabana@correo.org",3,2,LocalTime.of(10,0), LocalTime.of(19,0),mer1);
+		var tien10 = new Tienda(null, "Luis y Laura","descripcion",918653420,"luilar@correo.org",3,1,LocalTime.of(10,0), LocalTime.of(19,0),mer1);
 
-		tiendaRepo.saveAll(List.of(tien1,tien2,tien3,tien4,tien5,tien6));
+		tiendaRepo.saveAll(List.of(tien1,tien2,tien3,tien4,tien5,tien6,tien7,tien8,tien9,tien10));
 	}
 }
 

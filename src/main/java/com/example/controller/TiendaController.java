@@ -1,6 +1,5 @@
 package com.example.controller;
 
-import com.example.entities.Mercado;
 import com.example.entities.Tienda;
 import com.example.services.MercadoService;
 import com.example.services.TiendaService;
@@ -19,17 +18,17 @@ import java.util.Optional;
 @Controller
 public class TiendaController {
     private final MercadoService mercadoService;
-    private TiendaService tiendaServ;
+    private final TiendaService tiendaServ;
 
-    @GetMapping("home")
+    @GetMapping("tiendas")
     public String findAll (Model model){
         List<Tienda> tiendas = tiendaServ.findAll();
         model.addAttribute("mensaje","Listado de tiendas de mercados");
         model.addAttribute("tiendas", tiendas);
 
-        return "list-tienda";
+        return "tiendas";
     }
-    @GetMapping("main/tienda/list-tienda/{id}")
+    @GetMapping("tiendas/{id}")
     public String findById (Model model, @PathVariable Long id){
         Optional<Tienda> tiendaOp = tiendaServ.findById(id);
         if (tiendaOp.isPresent())
@@ -37,7 +36,7 @@ public class TiendaController {
 
         else
             model.addAttribute("error","TIENDA NO EXISTE O NO SE ENCUENTRA");
-                return "/tienda/info-tienda";
+                return "info-tienda";
         }
         /*@GetMapping("main/ciudad/{ciudad}")
     public String findByCiudad (Model model, @PathVariable String ciudad) {
@@ -47,7 +46,7 @@ public class TiendaController {
         @GetMapping("main/tienda/crear")
     public String crear (Model model){
         model.addAttribute("tienda", new Tienda());
-        return "/tienda/form-tienda";
+        return "form-tienda";
         }
     @GetMapping("main/{id}/tienda/editar")
     public String editForm(Model model, @PathVariable Long id) {
@@ -57,7 +56,7 @@ public class TiendaController {
         else
             model.addAttribute("error", "MERCADO NO EXISTE O NO SE ENCUENTRA");
 
-        return "/tiendaform-tienda";
+        return "form-tienda";
     }
 
     @PostMapping("main/tienda") // POST http://localhost:8080/foods

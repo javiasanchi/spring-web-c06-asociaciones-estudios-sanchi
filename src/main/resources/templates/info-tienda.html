@@ -5,7 +5,6 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Detalle de Mercados</title>
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
     <title>Detalle de Tienda</title>
 </head>
@@ -16,9 +15,9 @@
     <div class="row">
         <h3 class="mb-4">Detalle de tienda</h3>
         <div class="card-body mb-4">
-            <a type="button" class="btn btn-primary" th:href="@{/main}">Volver</a>
-            <a class="btn btn-success" th:href="@{/main/{id}/editar(id=${tienda.id})}">Editar</a>
-            <a class="btn btn-danger" th:href="@{/main/{id}/borrar(id=${tienda.id})}">Borrar</a>
+            <a type="button" class="btn btn-primary" th:href="@{/tiendas}">Volver</a>
+            <a class="btn btn-success" th:href="@{/tiendas/{id}/editar(id=${tienda.id})}">Editar</a>
+            <a class="btn btn-danger" th:href="@{/tiendas/{id}/borrar(id=${tienda.id})}">Borrar</a>
         </div>
         <div class="col-4">
 
@@ -27,7 +26,7 @@
             <div th:if="${error}">
                 <div class="alert alert-danger" role="alert" >
                     <p th:text="${error}"></p>
-                    <a type="button" class="btn btn-primary" th:href="@{/main}">Volver</a>
+                    <a type="button" class="btn btn-primary" th:href="@{/tiendas}">Volver</a>
             </div>
         </div>
             <div class="card" th:if="${error}== null">
@@ -37,13 +36,13 @@
                     <p class="card-text" th:text="${tienda.descripcion}" ></p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item" th:text="| Situada en el mercado : ${mercado.nombre} |" ></li>
                     <li class="list-group-item" th:text="| Telefono contacto: ${tienda.telefono}|" ></li>
-                    <li class="list-group-item" th:text="| Email: ${tienda.emaill}|" ></li>
+                    <li class="list-group-item" th:text="| Email: ${tienda.email}|" ></li>
                     <li class="list-group-item" th:text="| Ocupa el : ${tienda.numbPuesto} puesto|" ></li>
+                    <li class="list-group-item" th:text="| Situada en el mercado : ${tienda.mercado.nombre} |" ></li>
                     <li class="list-group-item">
-                        <h3><span th:if="${tienda.horAper}" class="badge text-bg-success">Hora de Apertura</span></h3>
-                        <h3><span th:if="${tienda.horCierre} == false" class="badge text-bg-danger">Hora de Ciere</span></h3>
+                        <h3><span th:if="${tienda.horAper} " th:text="| Abre a las ${tienda.horAper}|" class="badge text-bg-success"></span></h3>
+                        <h3><span th:if="${tienda.horCierre}" th:text="| Cierra a las ${tienda.horCierre}|" class="badge text-bg-danger"></span></h3>
                     </li>
 
                 </ul>

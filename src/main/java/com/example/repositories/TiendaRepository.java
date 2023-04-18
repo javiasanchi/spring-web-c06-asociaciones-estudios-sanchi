@@ -7,8 +7,10 @@ import java.util.List;
 import java.util.Optional;
 
 public interface TiendaRepository extends JpaRepository<Tienda, Long> {
-    List<Tienda> findAll ();
 
-    @Override
+    List<Tienda> findAll ();
     Optional<Tienda> findById(Long id);
+    Tienda save (Tienda tienda);
+
+    void deleteById (Long id);
 }

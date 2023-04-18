@@ -16,7 +16,7 @@
     <h1 class="mt-3" th:text="${mensaje}"></h1>
     <div class="col mt-3">
       <div style="text-align: center">
-        <a class="btn btn-info mb-3" th:href="@{/main/crear}">Crear nueva tienda</a>
+        <a class="btn btn-info mb-3" th:href="@{/tiendas/crear}">Crear nueva tienda</a>
       </div>
       <div class="shadow p-3 mb-5 bg-body rounded">
         <table class="table table-hover">
@@ -39,11 +39,11 @@
             <td th:text="${tienda.email}"></td>
             <td th:text="${tienda.horAper}"></td>
             <td th:text="${tienda.horCierre}"></td>
-            <td th:text="${tienda.mercado}"></td>
+
             <td>
-              <a type="button" class="btn btn-primary" th:href="@{/home/{id}(id=${tienda.id})}">Ver</a>
-              <a class="btn btn-success" th:href="@{/home/{id}/editar(id=${tienda.id})}">Editar</a>
-              <a class="btn btn-danger" th:href="@{/home/{id}/borrar(id=${tienda.id})}">Borrar</a>
+              <a type="button" class="btn btn-primary" th:href="@{/tiendas/{id}(id=${tienda.id})}">Ver</a>
+              <a class="btn btn-success" th:href="@{/tiendas/{id}/editar(id=${tienda.id})}">Editar</a>
+              <a class="btn btn-danger" th:href="@{/tiendas/{id}/borrar(id=${tienda.id})}">Borrar</a>
 
             </td>
           </tr>
